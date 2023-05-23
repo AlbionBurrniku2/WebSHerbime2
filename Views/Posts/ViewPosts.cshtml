@@ -1,0 +1,18 @@
+﻿@model IEnumerable<AbiBlog.Models.Post>
+@{
+    ViewData["Title"] = "ViewPosts";
+}
+
+<h1>ViewPosts</h1>
+
+<ul>
+    @foreach (var item in Model.Reverse())
+    {
+        <li>
+            <h3>@Html.DisplayFor(modelItem => item.Title)</h3>
+            <p>@Html.DisplayFor(modelItem => item.Description)</p>
+            <p>Created on: @Html.DisplayFor(modelItem => item.CreatedDate)</p>
+            <p>Author: @Html.DisplayFor(modelItem => item.Author)</p>
+        </li>
+    }
+</ul>
